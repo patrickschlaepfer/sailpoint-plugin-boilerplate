@@ -15,12 +15,12 @@ task packplugin(type: Zip) {
     // into 'public'
   }
   from('build/libs')  {
-    include 'iamwebshopplugin.jar'
+    include 'sailpoint-plugin-boilerplate.jar'
   }
   from('src/main/resources') {
     include '*'
     include '*/**'
   }
-  archiveName 'Reports.zip'
+  archiveName 'sailpoint-plugin-boilerplate.zip'
   destinationDir(file('build'))
 }

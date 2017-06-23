@@ -1,0 +1,5 @@
+version '0.0.1'
+
+task build(type: Exec) {
+     commandLine "npm", "info"
+}

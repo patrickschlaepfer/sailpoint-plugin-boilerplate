@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+dependencies {
+  compile 'javax.servlet:servlet-api:2.5'
+}
+
+//frontend:build will be run before the processResources
+processResources.dependsOn('frontend:build')
+
+task packplugin(type: Zip) {
+  from('frontend/dist') {
+  //Public is a default supported Spring Boot resources directory.
+    include '*'
+    include '*/**'
+    // into 'public'
+  }
+  from('build/libs')  {
+    include 'iamwebshopplugin.jar'
+  }
+  from('src/main/resources') {
+    include '*'
+    include '*/**'
+  }
+  archiveName 'Reports.zip'
+  destinationDir(file('build'))
+}

@@ -1,14 +1,15 @@
-interface ISearchController {
+interface IIdentityListController {
     vehicles: any;
     setVehicles(): void;
 }
 
-class SearchController implements ISearchController {
+export class IdentityListController implements IIdentityListController {
+  static componentName: string = 'IdentityListController';
 
     vehicles: any;
 
-    static $inject = ['VehicleMakeService'];
-    constructor(private vehicleMakeService: VehicleMakeService) {
+    static $inject = ['IdentitiesService'];
+    constructor(private vehicleMakeService: IIdentitiesService) {
         this.vehicles = {};
         this.setVehicles();
     }

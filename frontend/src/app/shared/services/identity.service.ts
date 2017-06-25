@@ -15,7 +15,7 @@ export class IdentitiesService implements IIdentitiesService {
 
         return this.$http<IListResult[]>({
             method: 'get',
-            url: SailPoint.CONTEXT_PATH+'/plugin/rest/BoilerplatePlugin/applications/'+id,
+            url: SailPoint.CONTEXT_PATH+'/plugin/rest/BoilerplatePlugin/identites,
             headers: {
                 'X-XSRF-TOKEN': PluginHelper.getCsrfToken()
             }

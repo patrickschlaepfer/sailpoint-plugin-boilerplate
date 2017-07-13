@@ -2,3 +2,7 @@ build
 .gradle
 node_modules
 dist
+
+# Ignoring Sailpoint libs
+libs/identityiq.jar
+libs/SSAppender.jar

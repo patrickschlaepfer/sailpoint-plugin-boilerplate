@@ -12,7 +12,7 @@
             <entry key="restResources">
                 <value>
                     <List>
-                       <String>com.schlaepfer.plugin.rest.BoilerPlateResource</String>
+                       <String>com.schlaepfer.plugin.rest.BoilerPlateRequestAccessResource</String>
                     </List>
                 </value>
             </entry>

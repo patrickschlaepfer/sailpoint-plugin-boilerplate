@@ -6,3 +6,7 @@ dist
 # Ignoring Sailpoint libs
 libs/identityiq.jar
 libs/SSAppender.jar
+
+.classpath
+.project
+.settings/

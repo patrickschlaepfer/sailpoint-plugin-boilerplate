@@ -33,50 +33,50 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile "commons-io:commons-io:2.5"
-    compile "org.apache.logging.log4j:log4j-core:2.7"
+    implementation "commons-io:commons-io:2.11.0"
+    implementation "org.apache.logging.log4j:log4j-core:2.7"
 
     // Sailpoint libraries
-    compile files('libs/identityiq.jar')
-    compile files('libs/SSAppender.jar')
+    implementation files('libs/identityiq.jar')
+    implementation files('libs/SSAppender.jar')
 
     // compile "com.sailpoint:identityiq:$sailpointVersion"
     // compile "com.sailpoint:ssappender:$sailpointVersion"
-    compile "org.aspectj:aspectjrt:1.8.10"
-    compile "org.aspectj:aspectjtools:1.7.0"
+    implementation "org.aspectj:aspectjrt:1.8.10"
+    implementation "org.aspectj:aspectjtools:1.7.0"
 
-    compile "commons-logging:commons-logging:$commonsLoggingVersion"
-    compile "com.googlecode.juniversalchardet:juniversalchardet:1.0.3"
+    implementation "commons-logging:commons-logging:$commonsLoggingVersion"
+    implementation "com.googlecode.juniversalchardet:juniversalchardet:1.0.3"
     // compile "org.json:json:20080701"
 
-    compile "asm:asm:3.3.1"
-    compile "org.json:json:20140107"
-    compile "com.sun.jersey:jersey-bundle:$jerseyVersion"
-    compile "com.sun.jersey:jersey-server:$jerseyVersion"
-    compile "com.sun.jersey:jersey-core:$jerseyVersion"
+    implementation "asm:asm:3.3.1"
+    implementation "org.json:json:20140107"
+    implementation "com.sun.jersey:jersey-bundle:$jerseyVersion"
+    implementation "com.sun.jersey:jersey-server:$jerseyVersion"
+    implementation "com.sun.jersey:jersey-core:$jerseyVersion"
 
-    compile "com.owlike:genson:0.99"
+    implementation "com.owlike:genson:0.99"
 
     // For Servlet Container like Tomcat
-    compile "com.sun.faces:jsf-api:2.2.14"
-    compile "com.sun.faces:jsf-impl:2.2.14"
+    implementation "com.sun.faces:jsf-api:2.2.14"
+    implementation "com.sun.faces:jsf-impl:2.2.14"
 
-    compile "org.apache.myfaces.tomahawk:tomahawk20:1.1.14"
+    implementation "org.apache.myfaces.tomahawk:tomahawk20:1.1.14"
 
-    compile "javax.servlet:jstl:1.2"
+    implementation "javax.servlet:jstl:1.2"
 
-    compile "javax.servlet:servlet-api:2.5"
-    compile "javax.servlet.jsp:jsp-api:2.1"
-    compile "com.sun.el:el-ri:1.0"
+    implementation "javax.servlet:servlet-api:2.5"
+    implementation "javax.servlet.jsp:jsp-api:2.1"
+    implementation "com.sun.el:el-ri:1.0"
 
-    compile "javax.ws.rs:javax.ws.rs-api:2.0"
+    implementation "javax.ws.rs:javax.ws.rs-api:2.0"
 
-    compile "org.codehaus.jackson:jackson-mapper-asl:1.8.9"
-   compile "org.codehaus.jackson:jackson-core-asl:1.8.9"
+    implementation "org.codehaus.jackson:jackson-mapper-asl:1.8.9"
+    implementation "org.codehaus.jackson:jackson-core-asl:1.8.9"
 
-    compile "com.cebglobal:xpresso:0.9.0"
+    implementation "com.cebglobal:xpresso:0.9.0"
 
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 
 }
 

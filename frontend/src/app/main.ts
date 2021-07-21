@@ -8,6 +8,7 @@ import 'angular-ui-bootstrap';
 
 // Vendor specific js
 import {IdentityListController} from './identities/identity-list.component';
+import {IdentitiesService} from './shared/services/identity.service';
 
 angular.module('',
 [
@@ -29,4 +30,4 @@ angular.module('',
   .when('/', {
     template: homeTpl, controller: '', controllerAs: ''
   })
-});s
+});

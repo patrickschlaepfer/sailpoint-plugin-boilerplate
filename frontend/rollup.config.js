@@ -1,36 +1,32 @@
 // Rollup plugins
-import 'rollup';
-import typescript from 'rollup-plugin-typescript';
-import buble from 'rollup-plugin-buble';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import uglify from 'rollup-plugin-uglify';
-import {minify} from 'uglify-js';
-import postcss from 'rollup-plugin-postcss';
-import string from 'rollup-plugin-string';
+import typescript from "@rollup/plugin-typescript";
+import buble from "@rollup/plugin-buble";
+import nodeResolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import uglify from "rollup-plugin-uglify";
+import {minify} from "uglify-js";
+import postcss from "rollup-plugin-postcss";
+import { string } from "rollup-plugin-string";
 
 const config =  {
-    entry: 'src/app/main.ts',
-    exports: 'auto',
-    targets: [{
-        dest: 'build/DemoApp.js',
-        format: 'umd',
-        moduleName: 'DemoApp',
-        sourceMap: true
-    }],
+    input: "src/app/main.ts",
+    output: {
+        file: "build/DemoApp.js",
+        format: "cjs"
+    },
     plugins: [
         postcss({
-            extensions: [ '.css' ],
+            extensions: [ ".css" ],
         }),
         string({
             // Required to be specified
-            include: '**/*.html',
+            include: "**/*.html",
 
             // Undefined by default
-            exclude: ['**/index.html']
+            exclude: ["**/index.html"]
         }),
         typescript({
-            typescript: require('typescript')
+            typescript: require("typescript")
         }),
         buble(),
         nodeResolve({
@@ -43,16 +39,14 @@ const config =  {
 
 // Minified JS Build
 if (process.env.BUILD === 'minify') {
-    config.targets = [{
-        dest: 'build/DemoApp.min.js',
-        format: 'umd',
-        moduleName: 'DemoApp',
-        sourceMap: false}];
+    config.output = {
+        file: 'build/DemoApp.min.js',
+        format: 'cjs'};
     config.plugins.push(
         uglify({}, minify)
     );
 }
 
-console.info(`\u001b[36m\[Rollup ${process.env.BUILD} build\]\u001b[97m \nConverting Typescript from ${config.entry} to javascript, exporting to: ${config.targets[0].dest}`);
+console.info(`\u001b[36m\[Rollup ${process.env.BUILD} build\]\u001b[97m \nConverting Typescript from ${config.input} to javascript, exporting to: ${config.output.file}`);
 
 export default config

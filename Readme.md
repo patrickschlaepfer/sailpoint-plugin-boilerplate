@@ -9,21 +9,23 @@ angular, rollup, npm, typescript and gradle.
 The project is divided into two parts. The java part, and the Frontend
 javascript part, which is found in the frontend directory.
 
-The assemble task compiles the source code of our application and
-packages it to a jar file.
+## Build
 
-This task doesn’t run the unit tests.
+In the docker conatiner, gradle and npm will be installed. Then
+the build will be executed, and finally the zip file copied
+back to be used.
 
-The build task performs a full build of the project.
+Build the docker image, if you made changes run
 
-The clean task deletes the build directory.
+    docker build -t mynewimage .
 
-The compileJava task compiles the source code of our application.
+to rebuild the docker image
 
-## Frontend
+To run the build
 
-Initial download all javascript dependencies just be running
+    docker run -it mynewimage /bin/bash
 
-```npm install```
+so you might be able to debug the build, if something goes wrong.
 
-this should do the trick and download all javascript dependencies.
+
+    

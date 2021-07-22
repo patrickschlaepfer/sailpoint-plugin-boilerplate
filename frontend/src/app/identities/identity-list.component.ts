@@ -1,6 +1,5 @@
 import {IdentitiesService} from "../shared/services/identity.service";
 
-
 interface IIdentityListController {
     getIdentities():void;
 }

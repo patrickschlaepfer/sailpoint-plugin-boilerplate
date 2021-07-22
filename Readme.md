@@ -27,5 +27,16 @@ To run the build
 
 so you might be able to debug the build, if something goes wrong.
 
+    docker builder prune
+
+## Getting the files out of the container
+
+Very unelegant way to get the compiled `plugin.zip` out of the container.
+
+    patrick@Patricks-MBP sailpoint-plugin-boilerplate % docker ps
+    CONTAINER ID   IMAGE       COMMAND       CREATED         STATUS         PORTS     NAMES
+    d8afd7a5a523   sp-plugin   "/bin/bash"   6 minutes ago   Up 6 minutes             hungry_ptolemy
+    patrick@Patricks-MBP sailpoint-plugin-boilerplate % docker cp hungry_ptolemy:/home/gradle/src/build/sailpoint-plugin-boilerplate-1.0.zip .
+
 
     

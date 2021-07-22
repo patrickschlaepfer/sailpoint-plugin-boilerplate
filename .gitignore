@@ -10,3 +10,5 @@ libs/SSAppender.jar
 .classpath
 .project
 .settings/
+
+*.zip

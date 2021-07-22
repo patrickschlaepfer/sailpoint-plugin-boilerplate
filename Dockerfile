@@ -6,4 +6,4 @@ COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src/frontend
 RUN npm install
 WORKDIR /home/gradle/src
-# RUN gradle compileplugin --no-daemon 
+RUN gradle compileplugin --no-daemon
